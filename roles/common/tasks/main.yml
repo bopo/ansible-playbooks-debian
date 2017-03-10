@@ -1,0 +1,23 @@
+---
+# - name: Update source
+#   get_url: dest=/etc/apt/source.list url=http://mirrors.163.com/.help/sources.list.trusty
+
+# - name: Update sources
+#   copy: src=sources.list.wheezy dest=/etc/apt/sources.list
+
+# - name: Update apt-get
+#   apt: update_cache=yes
+# - libxml2-dev
+# - libxslt1-dev
+# - openjdk-7-jdk
+    # - subversion
+    # - fabric
+
+- name: Install shell tools
+  apt: name={{ item }} state=present update_cache=yes
+  with_items:
+    - bash-completion
+    - vim-nox
+    - curl
+    - wget
+    - git

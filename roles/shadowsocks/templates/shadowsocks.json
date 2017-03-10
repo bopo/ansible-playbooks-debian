@@ -1,0 +1,11 @@
+{
+    "server":"{{ server_hostname }}",
+    "server_port":{{ shadowsocks_port }},
+    "local_address": "127.0.0.1",
+    "local_port":1080,
+    "password":"{{ shadowsocks_pass }}",
+    "timeout":300,
+    "method":"aes-256-cfb",
+    "fast_open": false,
+    "workers": 1
+}
