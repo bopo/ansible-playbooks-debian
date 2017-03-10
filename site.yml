@@ -1,0 +1,19 @@
+---
+- name: Install Base package.
+  hosts: vagrant
+  # remote_user: vagrant
+  become_user: root
+  become: yes
+
+  roles:
+    - common
+    - shadowsocks
+    - docker
+    - mysql
+    - nginx
+    - php
+    # - ssdb
+    # - weixin
+    # - zsh
+    # - nvm
+    # - pyenv

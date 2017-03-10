@@ -1,0 +1,4 @@
+---
+- name: restart scrapyd
+  command: /usr/local/bin/scrapyd
+

@@ -1,0 +1,20 @@
+---
+
+- name: Install Python env
+  apt: name={{ item }} state=present update_cache=yes
+  with_items:
+    - python-dev
+    - python-pip
+
+# - name: Upgrade pip tools
+#   pip: 
+#     name: pip 
+#     state: present
+#     extra_args: -i https://example.com/pypi/simple
+
+- name: Install Shadowsocks Server
+  pip: name=shadowsocks state=present
+
+- name: Copy Shadowsocks Configuration
+  template: src=shadowsocks.json dest=/etc/shadowsocks.json
+  notify: restart shadowsocks

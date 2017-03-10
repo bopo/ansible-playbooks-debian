@@ -1,0 +1,27 @@
+---
+- name: Install php-fpm and deps 
+  apt: name={{ item }} state=present
+  with_items:
+    - php5
+    - php5-fpm
+    # - php5-mongo
+    - php5-mcrypt
+    # - php5-mbstring
+    - php5-mysql
+    # - php5-xml
+    - php5-gd
+
+
+- name: Disable default pool
+  command: mv /etc/php5/fpm/pool.d/www.conf /etc/php5/fpm/pool.d/www.disabled creates=/etc/php5/fpm/pool.d/www.disabled
+  notify: restart php5-fpm
+ 
+- name: Copy php-fpm configuration
+  template: src=default.conf dest=/etc/php5/fpm/pool.d/
+  notify: restart php5-fpm
+
+- name: install composer
+  get_url: url=https://getcomposer.org/composer.phar dest=/usr/local/bin/composer mode=0755
+
+- name: config composer
+  shell: /usr/local/bin/composer config -g repositories.packagist composer http://packagist.phpcomposer.com

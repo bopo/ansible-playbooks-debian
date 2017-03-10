@@ -1,0 +1,3 @@
+---
+- name: restart shadowsocks
+  command: /usr/local/bin/ssserver -c /etc/shadowsocks.json -d restart

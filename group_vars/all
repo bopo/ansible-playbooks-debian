@@ -1,0 +1,28 @@
+---
+
+# These are the WordPress database settings
+db_name: thirty	 
+db_user: thirty
+db_pass: secret
+
+# You shouldn't need to change this.
+pgsql_port: 3306
+
+# This is used for the nginx server configuration, but access to the
+# WordPress site is not restricted by a named host.
+server_hostname: thirty.bankeys.com
+
+# Disable All Updates
+# By default automatic updates are enabled, set this value to true to disable all automatic updates
+auto_up_disable: false
+
+#Define Core Update Level
+#true  = Development, minor, and major updates are all enabled
+#false = Development, minor, and major updates are all disabled
+#minor = Minor updates are enabled, development, and major updates are disabled
+
+core_update_level: true
+
+# Shadowsocks config
+shadowsocks_port: 8388
+shadowsocks_pass: p4sswrd
