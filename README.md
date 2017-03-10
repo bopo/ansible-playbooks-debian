@@ -5,11 +5,11 @@
 
 内容包括：
 
-[x] docker
-[x] nginx
-[x] php5-fpm
-[x] shadowsocks
-[x] mysql
+- [x] docker
+- [x] nginx
+- [x] php5-fpm
+- [x] shadowsocks
+- [x] mysql
 
 
 通过以下命令一键操作:
