@@ -12,8 +12,3 @@
     - mysql
     - nginx
     - php
-    # - ssdb
-    # - weixin
-    # - zsh
-    # - nvm
-    # - pyenv
